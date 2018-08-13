@@ -22,7 +22,7 @@ let parse source destination =
   let source = Fpath.v source in
 
   of_file source >>= fun src ->
-  Iso8859.extract src >>= fun maps ->
+  Koi8.extract src >>= fun maps ->
 
   Bos.OS.File.with_oc destination produce maps
 
