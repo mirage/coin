@@ -1,5 +1,5 @@
 Coin
-===================================================
+----
 
 `coin` is a little library to normalize an KOI8-{U,R} input to UTF-8. This
 library uses tables provided by the Unicode Consortium:
