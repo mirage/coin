@@ -3,5 +3,5 @@
 
 (executable
  (name generate)
- (public_name uuuu.generate)
+ (public_name coin.generate)
  (libraries fmt bos rresult cmdliner ptmap angstrom))
