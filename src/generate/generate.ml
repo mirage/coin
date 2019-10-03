@@ -10,7 +10,7 @@ let ( / ) = Filename.concat
 
 let make_rule database name =
   let txt_file = name in
-  let id = Re.(get (exec re name) 1) in
+  let id = Re.(Group.get (exec re name) 1) in
   let ml_file = Fmt.strf "KOI8_%s.ml" id in
 
   Fmt.strf
