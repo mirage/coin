@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name:         "coin"
 maintainer:   "Romain Calascibetta <romain.calascibetta@gmail.com>"
 authors:      "Romain Calascibetta <romain.calascibetta@gmail.com>"
 homepage:     "https://github.com/mirage/coin"
@@ -18,7 +17,7 @@ build: [
 
 depends: [
   "ocaml" {>= "4.03.0"}
-  "ocamlfind"
+  "ocamlfind" {build}
   "dune"
   "re"
   "menhir"
