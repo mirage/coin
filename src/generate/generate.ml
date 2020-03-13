@@ -1,6 +1,7 @@
 #use "topfind";;
-#require "fmt";;
 #require "re";;
+
+let invalid_arg fmt = Format.kasprintf invalid_arg fmt
 
 let re =
   let open Re in
@@ -11,9 +12,9 @@ let ( / ) = Filename.concat
 let make_rule database name =
   let txt_file = name in
   let id = Re.(Group.get (exec re name) 1) in
-  let ml_file = Fmt.strf "KOI8_%s.ml" id in
+  let ml_file = Format.asprintf "KOI8_%s.ml" id in
 
-  Fmt.strf
+  Format.asprintf
     "(rule \
       (targets %s)
       (deps (:gen ../gen/generate.exe) %s)
@@ -21,8 +22,8 @@ let make_rule database name =
     ml_file (database / txt_file) (database / txt_file) ml_file
 
 let error () =
-  Fmt.invalid_arg "Invalid argument, expected folder database and output file: \
-                   %s --databases <folder> -o <output>" Sys.argv.(1)
+  invalid_arg "Invalid argument, expected folder database and output file: \
+                %s --databases <folder> -o <output>" Sys.argv.(1)
 
 let () =
   let database, output =
@@ -35,5 +36,5 @@ let () =
   let files = List.sort String.compare (Array.to_list (Sys.readdir database)) in
   let out = open_out output |> Format.formatter_of_out_channel in
 
-  List.map (make_rule database) files |> List.iter (Fmt.(pf out) "%s\n\n%!")
+  List.map (make_rule database) files |> List.iter (Format.fprintf out "%s\n\n%!")
 
