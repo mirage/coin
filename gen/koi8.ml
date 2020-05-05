@@ -23,18 +23,6 @@ let trim s =
       if left = 0 && right = len then s else
         String.sub s left (right - left)
 
-module Binding =
-struct
-  open Angstrom
-
-  let wsp = skip_while is_white
-
-  let binding =
-    take_while ((<>) ':') >>= fun name -> char ':' *> wsp *>
-    take_while1 (fun _ -> true) >>= fun value ->
-    return (trim name, trim value)
-end
-
 module Map = Map.Make(struct type t = code let compare = compare end)
 
 let extract source =
