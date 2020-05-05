@@ -3,5 +3,4 @@
 
 (executable
  (name generate)
- (public_name coin.generate)
- (libraries angstrom))
+ (public_name coin.generate))
