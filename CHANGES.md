@@ -1,3 +1,8 @@
+v0.1.3 2020-05-05 Paris (France)
+------------------------------
+
+* Remove `angstrom` as a dependency of `coin`
+
 v0.1.2 2020-03-13 Paris (France)
 ------------------------------
 
