@@ -21,5 +21,4 @@ depends: [
   "dune"
   "re"
   "menhir"
-  "angstrom" {>= "0.11.0"}
 ]
