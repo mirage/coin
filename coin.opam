@@ -20,5 +20,4 @@ depends: [
   "ocamlfind" {build}
   "dune"
   "re"
-  "menhir"
 ]
