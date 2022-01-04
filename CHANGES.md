@@ -1,3 +1,8 @@
+v0.1.4 2022-01-03 Paris (France)
+------------------------------
+
+* Upgrade the code base and delete the `menhir` dependency (#5)
+
 v0.1.3 2020-05-05 Paris (France)
 ------------------------------
 
