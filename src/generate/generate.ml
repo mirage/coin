@@ -1,17 +1,12 @@
-#use "topfind";;
-#require "re";;
-
 let invalid_arg fmt = Format.kasprintf invalid_arg fmt
-
-let re =
-  let open Re in
-  compile (seq [ str "KOI8-"; group (rep1 upper); str ".TXT" ])
 
 let ( / ) = Filename.concat
 
 let make_rule database name =
   let txt_file = name in
-  let id = Re.(Group.get (exec re name) 1) in
+  let off = 5 in
+  let len = String.length name - 4 - off in
+  let id = String.sub name off len in
   let ml_file = Format.asprintf "KOI8_%s.ml" id in
 
   Format.asprintf

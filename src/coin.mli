@@ -2,7 +2,7 @@
 type encoding = [`KOI8_U | `KOI8_R]
 
 val encoding_of_string : string -> encoding
-(** [encoding_of_string s] converts a (case insensitive)
+(** [encoding_of_string s] converts a (case sensitive)
    {{:http://www.iana.org/assignments/character-sets}IANA character set name} to
    an encoding. *)
 
