@@ -1,3 +1,8 @@
+v0.1.5 2025-11-28 Paris (France)
+------------------------------
+
+* Delete the `re` dependency and the `ocamlfind` tool (#7)
+
 v0.1.4 2022-01-03 Paris (France)
 ------------------------------
 
